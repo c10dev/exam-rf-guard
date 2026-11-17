@@ -1,0 +1,118 @@
+name: 실기기 시험 결과
+description: 실제 Android 휴대폰에서 켠 기기가 잡혔는지, 안 잡혔는지 알려 주세요.
+title: "[실기기] "
+labels: ["실기기 결과"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        한 번의 시험을 한 건으로 적어 주세요. 잡히지 않은 결과도 잡힌 결과만큼 도움이 됩니다.
+        이름·주소·학교 이름처럼 사람이나 장소를 알 수 있는 내용은 적지 마세요.
+  - type: input
+    id: app-version
+    attributes:
+      label: 앱 버전
+      description: 안내 화면에 나오는 버전. 직접 빌드했다면 커밋 번호도 적어 주세요.
+      placeholder: "1.0.1"
+    validations:
+      required: true
+  - type: input
+    id: phone
+    attributes:
+      label: 휴대폰 모델
+      placeholder: "Galaxy S23 (SM-S911N)"
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android 버전
+      placeholder: "14"
+    validations:
+      required: true
+  - type: dropdown
+    id: place
+    attributes:
+      label: 장소 종류
+      description: 장소 이름은 적지 않습니다.
+      options:
+        - 교실
+        - 강의실·회의실
+        - 집
+        - 그 밖의 실내
+    validations:
+      required: true
+  - type: dropdown
+    id: target
+    attributes:
+      label: 켠 기기
+      description: 여러 기기를 시험했다면 기기마다 따로 올려 주세요.
+      options:
+        - 켠 기기 없음 (빈 교실 기록 뒤 그대로 둠)
+        - 무선 이어폰·헤드셋
+        - 스마트워치
+        - 스마트 안경
+        - 휴대폰 (블루투스만 켬)
+        - 휴대폰 핫스팟
+        - 휴대용 와이파이
+        - 와이파이를 여는 카메라
+        - 그 밖의 기기
+    validations:
+      required: true
+  - type: input
+    id: target-detail
+    attributes:
+      label: 켠 기기의 제품과 상태
+      description: 제품 이름, 그리고 연결 전인지 휴대폰과 연결된 뒤인지 적어 주세요.
+      placeholder: "Galaxy Buds2, 케이스만 연 상태(연결 전)"
+  - type: input
+    id: distance
+    attributes:
+      label: 감독관 휴대폰과의 거리
+      placeholder: "약 5m, 사이에 책상"
+  - type: input
+    id: baseline
+    attributes:
+      label: 빈 교실 기록
+      description: 기록을 저장하기까지 걸린 시간과 그때 잡힌 전파 수.
+      placeholder: "2분 10초, 와이파이 6종·블루투스 4종"
+    validations:
+      required: true
+  - type: input
+    id: hits
+    attributes:
+      label: 시도한 횟수와 잡힌 횟수
+      description: 켠 기기가 없으면 비워 두세요.
+      placeholder: "5번 중 4번"
+  - type: input
+    id: latency
+    attributes:
+      label: 켠 뒤 화면에 뜨기까지 걸린 시간
+      placeholder: "빠르면 8초, 늦으면 50초"
+  - type: input
+    id: idle
+    attributes:
+      label: 아무것도 켜지 않고 둔 시간과 그동안의 새 전파 개수
+      description: README의 "15분 넘게 그대로 둡니다" 단계의 결과입니다.
+      placeholder: "20분, 새 전파 0개"
+  - type: textarea
+    id: missed
+    attributes:
+      label: 안 잡히거나 잘못 표시된 경우
+      description: 어떤 조건에서 그랬는지, 화면에 뜬 문구가 있으면 그대로 적어 주세요.
+  - type: textarea
+    id: unverified
+    attributes:
+      label: 확인하지 못한 것
+      description: 해 보지 못한 조건을 적어 주세요.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 올리기 전 확인
+      options:
+        - label: 글과 첨부한 화면에서 이름·주소·장소를 가렸습니다.
+          required: true
+        - label: 실제 시험 현장에서 받은 기록이 아닙니다.
+          required: true
