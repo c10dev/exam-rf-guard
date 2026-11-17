@@ -17,6 +17,12 @@ body:
     validations:
       required: true
   - type: input
+    id: pr
+    attributes:
+      label: 확인한 PR 번호
+      description: 열린 PR의 변경을 실기기로 확인했다면 번호를 적어 주세요. 예를 들어 제목에 `[실기기 확인 X]`가 붙은 PR입니다. 앱 버전 칸에는 그 PR의 커밋 번호를 적어 주세요.
+      placeholder: "#12"
+  - type: input
     id: phone
     attributes:
       label: 휴대폰 모델
@@ -36,6 +42,7 @@ body:
       label: 장소 종류
       description: 장소 이름은 적지 않습니다.
       options:
+        - 선택해 주세요
         - 교실
         - 강의실·회의실
         - 집
@@ -48,6 +55,7 @@ body:
       label: 켠 기기
       description: 여러 기기를 시험했다면 기기마다 따로 올려 주세요.
       options:
+        - 선택해 주세요
         - 켠 기기 없음 (빈 교실 기록 뒤 그대로 둠)
         - 무선 이어폰·헤드셋
         - 스마트워치
